@@ -1,0 +1,19 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+long long solution(int n) {
+    long long answer;
+    long long a = 1;
+    long long b = 2;
+    if(n == 1) return 1;
+    if(n == 2) return 2;
+    for(int i=3;i<=n;i++)
+    {
+        answer = (a + b) % 1234567;
+        a = b;
+        b = answer;
+    }
+    return answer;
+}
